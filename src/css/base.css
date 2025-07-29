@@ -30,3 +30,25 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+.gallery {
+  width: 1128px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 24px auto;
+}
+.gallery-item {
+  width: calc((100% - 48px) / 3);
+  min-height: 200px;
+}
+
+.gallery-link {
+  width: 100%;
+  height: 100%;
+}
+.gallery-image {
+  width: 100%;
+  height: 100%;
+}
