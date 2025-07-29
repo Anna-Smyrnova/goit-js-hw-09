@@ -52,6 +52,9 @@ main:has(.back-link) {
   width: 100%;
   height: 100%;
 }
+.sl-overlay {
+  background: rgba(46, 47, 66, 0.8) !important;
+}
 
 .feedback-form {
   display: flex;
