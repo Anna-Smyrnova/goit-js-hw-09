@@ -5,6 +5,14 @@ let formData = {
   message: '',
 };
 
+const lsData = getFromLS('feedback-form-state');
+if (lsData) {
+  formData.email = lsData.email || '';
+  formData.message = lsData.message || '';
+  formEl.elements.email.value = formData.email;
+  formEl.elements.message.value = formData.message;
+}
+
 formEl.addEventListener('input', e => {
   const email = e.currentTarget.elements.email.value.trim();
   const message = e.currentTarget.elements.message.value.trim();
@@ -13,16 +21,6 @@ formEl.addEventListener('input', e => {
   formData.message = message;
 
   saveToLS('feedback-form-state', formData);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const lsData = getFromLS('feedback-form-state');
-  if (lsData) {
-    formData.email = lsData.email || '';
-    formData.message = lsData.message || '';
-    formEl.elements.email.value = formData.email;
-    formEl.elements.message.value = formData.message;
-  }
 });
 
 formEl.addEventListener('submit', e => {
